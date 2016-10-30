@@ -13,5 +13,7 @@ $args = array(
 );
 
 $context['posts'] = Timber::get_posts($args);
+$context['categories'] = Timber::get_terms('category');
+
 
 Timber::render('front-page.twig', $context);

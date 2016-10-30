@@ -1,3 +1,12 @@
+@mixin button-styles {
+	@include font-scale(headline, 1, $caps: true, $no-line-height: true);
+	padding: 0.8em 2em;
+	@include transition(all);
+	&:hover {
+		@include transition(all);
+	}
+}
+
 .container {
 	@include container;
 	@include padding__medium;
@@ -9,15 +18,12 @@
 	text-align: center;
 }
 .button {
-	@include font-scale(headline, 1, $caps: true, $no-line-height: true);
+	@include button-styles;
 	display: inline-block;
 	border: 1px solid $color__black;
-	padding: 0.8em 2em;
-	@include transition(all);
 	&:hover {
 		background: $color__black;
 		color: $color__white;
-		@include transition(all);
 	}
 }
 
@@ -77,6 +83,32 @@
 .header__text {
 	@include block-element;
 	margin: 0 auto;
+}
+
+
+.cat-buttons {
+	padding-left: 0;
+	list-style: none;
+	text-align: center;
+	max-width: 680px;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.cat-button {
+	display: inline-block;
+	padding: 0.5em;
+}
+
+.cat-button-link {
+	@include button-styles;
+	display: block;
+	background: $color__accent;
+	color: $color__white;
+	&:hover {
+		background: $color__accent--dark;
+	}
 }
 
 .cards {

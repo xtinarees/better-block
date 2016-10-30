@@ -12,6 +12,28 @@
 
 <section class="section section--border">
 	<div class="container">
+
+		<h2 class="section__title">Designs by Category</h2>
+		{% if categories %}
+			<nav>
+				<ul class="cat-buttons">
+					{% for category in categories %}
+							{% if category.title != 'Uncategorized' %}
+							<li class="cat-button">
+								<a  class="cat-button-link" href="{{ category.link }}">{{category.title}}
+								</a>
+							</li>
+							{% endif %}
+					{% endfor %}
+				</ul>
+			</nav>
+		{% endif %}
+
+	</div>
+</section>
+
+<section class="section section--border">
+	<div class="container">
 		<h2 class="section__title">Learn More</h2>
 
 		<div class="bigCards">
