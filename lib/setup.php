@@ -62,7 +62,7 @@ function create_post_type() {
       'hierarchical'        => true,
       'taxonomies'  => array( 'category' ),
       'supports' => array('title', 'template', 'editor', 'thumbnail', 'excerpt', 'page-attributes'),
-      'rewrite' => array( 'slug' => 'products'),
+      'rewrite' => array( 'slug' => 'designs'),
       'query_var' => true,
     )
   );
