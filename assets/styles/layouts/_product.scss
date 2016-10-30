@@ -2,7 +2,6 @@ $width__product-content: 320px;
 
 .product__gallery {
 	@include breakpoint(large_medium) {
-		// @include span(8 of 12);
 		float: left;
 		width: calc(100% - #{$width__product-content});
 	}
@@ -11,7 +10,6 @@ $width__product-content: 320px;
 
 .product__content {
 	@include breakpoint(large_medium) {
-		// @include span(4 of 12 last);
 		float: left;
 		width: $width__product-content;
 	}
@@ -23,6 +21,7 @@ $width__product-content: 320px;
 
 .product__title {
 	@include font-scale(headline, 4, $caps: true);
+	margin-top: 0.3em;
 }
 
 .product__text {
@@ -39,7 +38,9 @@ $width__product-content: 320px;
 .product__category {
 	color: $color__accent;
 	display: inline-block;
-	padding: 0 0.5em;
+	// padding: 0 0.5em;
+	padding-right: 0.5em;
+
 	&:first-child {
 		padding-left: 0;
 	}
@@ -50,6 +51,10 @@ $width__product-content: 320px;
 		color: $color__accent--dark;
 		@include transition(color);
 	}
+}
+
+.product__category-separator {
+	padding-right: 0.5em;
 }
 
 .product__button {

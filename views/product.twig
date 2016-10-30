@@ -56,7 +56,7 @@
 						{{ term.name }}
 					</a>
 				</li>
-				{% if not loop.last %} | {% endif %}
+				{% if not loop.last %} <span class="product__category-separator">/</span> {% endif %}
 			{% endfor %}
 			</ul>
 

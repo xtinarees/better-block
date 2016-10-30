@@ -274,6 +274,22 @@
 	@include font-scale(headline, 4, $caps: true);
 }
 
+.page__text {
+	a {
+		text-decoration: underline;
+		&:hover {
+			opacity: 0.8;
+		}
+	}
+
+	ul {
+		padding-left: 1em;
+	}
+	li {
+		padding-bottom: 1em;
+	}
+}
+
 
 
 
