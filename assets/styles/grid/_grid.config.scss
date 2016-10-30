@@ -1,0 +1,14 @@
+// requires susy
+// Grid settings
+// Padding
+$padding__medium: 25px;
+$padding__small: 15px;
+
+$susy: (
+    columns: 12,
+    container: $device__large,
+    gutters: 1/3.5,
+    global-box-sizing: border-box,
+    debug: (image: hide),
+);
+

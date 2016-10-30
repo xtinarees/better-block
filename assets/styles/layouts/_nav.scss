@@ -1,0 +1,102 @@
+$height__nav: 100px;
+
+.nav {
+	width: 100%;
+	top: 0;
+	background: $color__white;
+	box-shadow: 0 2px 5px 0 rgba(0,0,0,.16),0 2px 10px 0 rgba(0,0,0,.12);
+
+	@include breakpoint(nav-large) {
+		position: fixed;
+		height: $height__nav;
+	}
+}
+
+
+	.nav__logo {
+		max-height: $height__nav - 60px;
+		@include breakpoint(nav-large) {
+			float: left;
+			padding: 30px 0;
+		}
+		@include breakpoint(nav-small) {
+			display: block;
+			margin-left: auto;
+			margin-right: auto;
+			padding-top: 1em;
+		}
+
+	}
+
+	.nav__inner {
+		@include breakpoint(nav-large) {
+			display: table;
+			float: right;
+			height: $height__nav;
+		}
+	}
+
+	.nav__items {
+		margin: 0;
+		padding: 0;
+
+		@include breakpoint(nav-large) {
+			display: table-cell;
+			vertical-align: middle;
+			text-align: right;
+		}
+
+		@include breakpoint(nav-small) {
+			text-align: center;
+			clear: both;
+			padding: 1em;
+		}
+
+	}
+
+	.nav__item {
+		display: inline-block;
+		color: $color__black;
+		&.is-active {
+			color: $color__accent;
+		}
+
+		@include breakpoint(large-only) {
+			margin-left: 3em;
+		}
+		@include breakpoint(medium_small) {
+			margin-left: 1em;
+		}
+
+		&:first-child {
+			margin-left: 0;
+		}
+
+		margin-top: 0.3em;
+		margin-bottom: 0.3em;
+	}
+
+	.nav__button a {
+		background: $color__accent;
+		color: $color__white;
+		border-radius: 0.3%;
+		padding: 0.4em 0.7em;
+		display: block;
+		@include transition(background);
+		font-size: 12px;
+		text-transform: uppercase;
+		letter-spacing: 0.08em;
+
+		&:hover,
+		&:focus,
+		&:active {
+			background: $color__accent--dark;
+			@include transition(background);
+		}
+	}
+
+@include breakpoint(nav-large) {
+	.site-wrapper {
+		margin-top: $height__nav;
+	}
+}

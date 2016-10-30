@@ -1,0 +1,17 @@
+<section class="section section--border">
+	<div class="container">
+		<h2 class="section__title">Featured Products</h2>
+
+		<div class="cards">
+		{% for product in products %}
+			{{ macros.card(product) }}
+		{% endfor %}
+		</div>
+
+
+		<div class="button-wrapper">
+			<a class="button" href="/wikiblock/products">View All Products</a>
+		</div>
+
+	</div>
+</section>

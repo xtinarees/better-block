@@ -1,0 +1,44 @@
+.issue__foreground,
+.footer,
+.nav__logo {
+	z-index: 50;
+}
+
+
+.social-sharing-overlay .social-button--plugin, 
+.slideshow__buttons,
+.slideshow-icon,
+.slideshow-banner,
+.search__icon {
+	z-index: 100;
+}
+
+.nav,
+.nav__main-wrapper,
+.nav__main__search { 
+	z-index: 1000; 
+}
+
+.nav__button,
+.nav__tagline-wrapper {
+	z-index: 1001;
+}
+
+.slideshow {
+	z-index: 1002;
+}
+
+.is-loading-overlay {
+	z-index: 1003;
+}
+
+.slideshow__nav,
+.slideshow__close,
+.rsArrow {
+	z-index: 1003;
+}
+
+.jquery-modal {
+	z-index: 2000;
+}
+

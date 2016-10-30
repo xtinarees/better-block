@@ -1,0 +1,36 @@
+@import "../../bower_components/susy/sass/_susy.scss";
+@import "../../bower_components/ewing/sass/main.scss";
+
+
+
+body#tinymce {
+    ul, dl, ol { padding-left: 1em; }
+
+    .pull-quote,
+    .aside {
+        max-width: 400px; 
+    }
+
+    .pull-quote {
+        @include font-scale(headline, 3);
+    }
+
+    .pull-quote__attribution {
+        @include font-scale(kicker, 1, $caps: true);
+    }
+
+    .aside {
+        border-top: 5px solid $color__black;
+        border-bottom: 5px solid $color__black;
+        margin-top: 1em;
+        padding: 1em 0;
+
+        h2, h3, h4, h5, h6, p, span { margin-top: 0.5rem; }
+
+        h2 { @include font-scale(secondaryHeading, 2); }
+        h3 { @include font-scale(secondaryHeading, 2, $caps: true); color: $color__red-dmag; }
+        h4 {  @include font-scale(accent, 4, $caps: true); }
+    }
+
+}
+

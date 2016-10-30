@@ -1,0 +1,25 @@
+<nav class="nav">
+	<div class="container">
+		<a class="nav__logo-wrapper" href="/wikiblock">
+			<img class="nav__logo" src="{{ options.logo }}" />
+		</a>
+
+		<div class="nav__inner">
+			<ul class="nav__items">
+			{% for item in menu_primary.get_items %}
+					<li class="nav__item {% if page.slug == item.slug %}is-active{% endif %}">
+						<a href="{{item.get_link}}">{{item.title}}
+						</a>
+					</li>
+			{% endfor %}
+				{% if options.nav_button_text %}
+					<li class="nav__button nav__item">
+						<a href="{{ options.nav_button_link }}">
+							{{ options.nav_button_text }}
+						</a>
+					</li>
+				{% endif %}
+			</ul>
+		</div>
+	</div>
+</nav>

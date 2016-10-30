@@ -1,0 +1,26 @@
+$height__nav: 100px;
+.nav {
+	width: 100%;
+	top: 0;
+	background: $color__black;
+	height: $height__nav;
+	position: fixed;
+	line-height: $height__nav;
+}
+
+	.nav__logo {
+		float: left;
+		max-width: 300px;
+		max-height: $height__nav;
+	}
+
+	.nav__items {
+		float: right;
+		margin: 0;
+	}
+
+	.nav__item {
+		display: inline-block;
+		color: $color__white;
+		@include font-scale(headline, 1, $caps: true);
+	}

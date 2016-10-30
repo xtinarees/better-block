@@ -1,0 +1,32 @@
+{% extends 'base.twig' %}
+
+{% block body %}
+
+<header class="hero" style="background-image: url({{ page.get_thumbnail.src }});">
+	<div class="hero__inner header">
+		{{ macros.header(page, options) }}
+	</div>
+</header>
+
+{% include 's-featured-products.twig' %}
+
+<section class="section section--border">
+	<div class="container">
+		<h2 class="section__title">Learn More</h2>
+
+		<div class="bigCards">
+		{% for post in posts %}
+			<article class="bigCard" style="background-image: url({{ post.get_thumbnail.src('wide_6-12') }});" >
+				<a class="bigCard__inner ar-content" href="{{ post.link }}">
+					<h1 class="bigCard__title">{{ post.title }}</h1>
+				</a>
+			</article>
+		{% endfor %}
+		</div>
+
+	</div>
+</section>
+
+{% include 's-quote.twig' %}
+
+{% endblock %}

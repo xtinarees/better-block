@@ -1,0 +1,8 @@
+html {
+	@include dmag-typography-defaults;
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+}

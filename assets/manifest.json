@@ -1,0 +1,44 @@
+{
+  "dependencies": {
+    "main.js": {
+      "files": [      
+        "../vendor/royalslider/royalslider/dev/jquery.royalslider.js",
+        "../vendor/royalslider/royalslider/dev/modules/jquery.rs.deeplinking.js",
+        "../vendor/royalslider/royalslider/dev/modules/jquery.rs.global-caption.js",
+        "scripts/dmag.toggler.js",
+        "scripts/dmag.slider.js",
+        "scripts/dmag.slideshow.js",
+        "scripts/dmag.card.js",
+        "scripts/main.js"
+      ],
+      "main": true
+    },
+    "main.css": {
+      "files": [
+        "styles/main.scss"
+      ],
+      "bower": [
+        "normalize-css"
+      ],
+      "main": true
+    },
+    "editor-styles.css": {
+      "files": [
+        "styles/editor-styles.scss"
+      ]
+    },
+    "custom.css": {
+      "files": [
+        "styles/custom.css"
+      ]
+    },
+    "ajax-scripts.js": {
+      "files": [
+        "scripts/ajax-scripts.js"
+      ]
+    },
+    "jquery.js": {
+      "bower": ["jquery"]
+    }
+  }
+}

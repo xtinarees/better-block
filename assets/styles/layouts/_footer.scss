@@ -1,0 +1,21 @@
+.footer {
+	background: $color__black;
+	color: $color__white;
+	text-align: center;
+	padding: 2em 0;
+	@include font-scale(bodyCopy, 1);
+}
+
+.footer__logos {
+	display: block;
+	width: 100%;
+	padding-top: 2em;
+
+}
+
+.footer__logo {
+	// max-width: 100px;
+	display: inline-block;
+	padding: 0 1em;
+	vertical-align: middle;
+}

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<meta name="description" content="Dream it. Print it. Build it. Live it.">
+
+
+	<link href="//cdn-images.mailchimp.com/embedcode/classic-10_7.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+   #mc_embed_signup{background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif; }
+   /* Add your own MailChimp form style overrides in your site stylesheet or in this style block.
+      We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
+</style>
+
+
+	{{ wp_head }}
+
+	<script> var $ = jQuery; </script>
+
+
+</head>
+
+<body>
+	<!--[if IE]>
+		<div class="alert alert-warning">
+			<?php _e('You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.', 'sage'); ?>
+		</div>
+	<![endif]-->
+
+	{# {% import "icons.twig" as icons %} #}
+	{% import "macros.twig" as macros %}
+
+	{% include "nav.twig" %}
+
+	<div class="site-wrapper">
+		{% block body %}
+
+		{% endblock %}{# /body #}
+	</div>
+
+	{% include 's-newsletter.twig' %}
+
+	<footer class="footer">
+		Copyright &copy; {{ current_year }}, Better Block Foundation
+		<div class="footer__logos">
+			<a class="footer__logo" href="http://www.betterblock.org">
+				<img class="image" src="{{ path_images }}better-block-logo.png" alt="Better Block Logo" />
+			</a>
+			<a class="footer__logo" href="http://knightfoundation.org">
+				<img class="image" src="{{ path_images }}KF_logo-horizontal.png" alt="Knight Foundation Logo" />
+			</a>
+		</div>
+	</footer>
+
+	{{ wp_footer }}
+
+
+	{# tktk #}
+	{# {% include 'footer_scripts.twig' %} #}
+	{# {% include 'interstitial.twig' %} #}
+
+
+</body>
+</html>
+

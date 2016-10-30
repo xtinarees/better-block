@@ -1,0 +1,142 @@
+$width__product-content: 320px;
+
+.product__gallery {
+	@include breakpoint(large_medium) {
+		// @include span(8 of 12);
+		float: left;
+		width: calc(100% - #{$width__product-content});
+	}
+	position: relative; // force arrows inside of container
+}
+
+.product__content {
+	@include breakpoint(large_medium) {
+		// @include span(4 of 12 last);
+		float: left;
+		width: $width__product-content;
+	}
+}
+
+.product__content-inner {
+	padding-left: 1em;
+}
+
+.product__title {
+	@include font-scale(headline, 4, $caps: true);
+}
+
+.product__text {
+	ul {
+		padding-left: 1em;
+	}
+}
+
+.product__categories {
+	@extend %list-unstyled;
+	@include font-scale(headline, 1, $caps: true);
+}
+
+.product__category {
+	color: $color__accent;
+	display: inline-block;
+	padding: 0 0.5em;
+	&:first-child {
+		padding-left: 0;
+	}
+	@include transition(color);
+	&:hover,
+	&:active,
+	&:focus {
+		color: $color__accent--dark;
+		@include transition(color);
+	}
+}
+
+.product__button {
+	background: $color__accent;
+	color: $color__white;
+	@include font-scale(headline, 1, $caps: true, $no-line-height: true);
+	width: 100%;
+	padding: 1em 0;
+	text-align: center;
+	display: block;
+	@include transition(background);
+
+	&:hover,
+	&:focus,
+	&:active {
+		background: $color__accent--dark;
+		@include transition(background);
+	}
+}
+
+// SLIDESHOW STUFF
+.slides img {
+	width: 100%;
+}
+
+#slider {
+	.flex-direction-nav { display: none; }
+}
+
+
+//arrow styling
+.flex-direction-nav,
+.slides {
+	padding: 0;
+	list-style: none;
+}
+
+#carousel { position: relative; }
+
+.flex-direction-nav {
+	width: 100%;
+	color: $color__white;
+	margin: 0;
+
+	a:before {
+		font-family: 'fontello';
+		font-size: 35px;
+		color: $color__black;
+		content: '\e800';
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
+
+	a.flex-next:before {
+		content: '\e801';
+	}
+
+}
+
+.flex-nav-prev,
+.flex-nav-next {
+	position: absolute;
+	top: 0;
+	height: 100%;
+	background: rgba(255, 255, 255, 0.7);
+	// border: 1px solid #d3d3d3;
+	width: 30px;
+}
+
+.flex-nav-prev {
+	left: 0;
+}
+
+.flex-nav-next {
+	right: 0;
+}
+
+.flex-next,
+.flex-prev { 
+    opacity: 1 !important;
+    &:hover { opacity: 0.8 !important; }
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+
+

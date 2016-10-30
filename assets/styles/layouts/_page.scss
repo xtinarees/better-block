@@ -1,0 +1,350 @@
+.container {
+	@include container;
+	@include padding__medium;
+	@include padding__small;
+}
+
+.button-wrapper {
+	width: 100%;
+	text-align: center;
+}
+.button {
+	@include font-scale(headline, 1, $caps: true, $no-line-height: true);
+	display: inline-block;
+	border: 1px solid $color__black;
+	padding: 0.8em 2em;
+	@include transition(all);
+	&:hover {
+		background: $color__black;
+		color: $color__white;
+		@include transition(all);
+	}
+}
+
+.image { max-width: 100%; }
+
+.section {
+	padding-top: gutter(6);
+	padding-bottom: gutter(6);
+}
+
+.section--border {
+	.container { border-top: 1px solid $color__black; }
+}
+
+.section__title {
+	text-align: center;
+	@include font-scale(headline, 3, $caps: true);
+}
+
+.hero {
+	width: 100%;
+	@include breakpoint(large_medium) {
+		height: 80vh;
+		display: table;
+		background-attachment: fixed;
+	}
+	background-position: center center;
+	background-size: cover;
+
+}
+
+	.hero__inner {
+		@include breakpoint(large_medium) {
+			display: table-cell;
+			vertical-align: middle;
+		}
+		background-color: rgba(255, 255, 255, 0.3);
+	}
+
+.header {
+	padding: gutter(4) 0 gutter(6) 0;
+	@include padding__medium;
+	@include padding__small;
+
+	@include breakpoint(small-only) {
+		padding-top: 3em;
+		padding-bottom: 1em;
+	}
+}
+
+.header__title {
+	margin-top: 0;
+	@include block-element;
+	@include font-scale(headline, 4, $caps: true);
+}
+
+.header__text {
+	@include block-element;
+	margin: 0 auto;
+}
+
+.cards {
+	@extend %clearfix;
+}
+
+.cards--border {
+	border-bottom: 1px solid $color__black;
+}
+
+.card {
+	@include breakpoint(large_medium) {
+		@include gallery(4 of 12);
+	}
+	text-align: center;
+	margin-bottom: gutter(6);
+
+	&:hover, 
+	&:active,
+	&:focus {
+		.card__title { 
+			color: $color__accent;
+			@include transition(color);
+		}
+	}
+}
+
+	.card__image {
+		width: 100%;
+		max-width: 100%;
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	$size__child-count: 50px;
+	.card__child-count {
+		background: $color__accent;
+		color: $color__white;
+		border-radius: 50%;
+		width: $size__child-count;
+		height: $size__child-count;
+		line-height: $size__child-count;
+		display: inline-block;
+		margin-top: -#{$size__child-count / 2};
+	}
+
+
+	.card__title {
+		@include font-scale(bodyCopy, 3, $caps: true);
+		@include transition(color);
+	}
+
+.bigCard {
+	@include gallery(6 of 12);
+	@include aspect-ratio(3, 2);
+	color: $color__white;
+	background-size: cover;
+	text-align: center;
+}
+
+	.bigCard__inner {
+		background-color: rgba(0, 0, 0, 0.2);
+		@include transition(background-color);
+
+		&:hover,
+		&:active,
+		&:focus {
+			background-color: rgba(0, 0, 0, 0.4);
+			@include transition(background-color);
+		}
+	}
+
+	.bigCard__title {
+		padding: 0 1em;
+		margin: 0;
+		@include center-absolute;
+
+		@include breakpoint(large_medium) {
+			@include font-scale(bodyCopy, 3, $caps: true, $responsive: false);
+		}
+		@include breakpoint(small-only) {
+			@include font-scale(bodyCopy, 2, $caps: true, $responsive: false);
+		}
+		width: 100%;
+	}
+
+
+.tax-cats {
+    text-align: center;
+    margin-bottom: gutter-times(2);
+    font-size: 0;
+    padding-left: 0;
+    width: 100%;
+
+    border-top: 1px solid $color__black;
+    border-bottom: 1px solid $color__black;
+
+    @include breakpoint(large-only) {
+    	display: table;
+    }
+
+    @include breakpoint(medium_small) {
+    	@include scroller__items;
+    	width: 100vw;
+    }
+
+    @include breakpoint(medium-only) {
+    	margin-left: -#{$padding__medium};
+    	margin-right: -#{$padding__medium};
+    }
+
+    @include breakpoint(small-only) {
+    	margin-left: -#{$padding__small};
+    	margin-right: -#{$padding__small};
+    }
+
+
+}
+
+    .tax-cat {
+        @include font-scale(headline, 1, $caps: true);
+        cursor: pointer;
+        @include trans-out;
+
+        @include breakpoint(large-only) {
+        	display: table-cell;
+        	vertical-align: middle;
+            // width: 20%;
+        }
+
+        @include breakpoint(medium_small) {
+        	@include scroller__item;
+        }
+
+        a { display: block; padding: 1em; }
+
+        &:hover,
+        &:active {
+            background: lighten($color__accent, 40%);
+            @include trans-in;
+        }
+
+        &.active,
+        &.active-start,
+        &:focus {
+            background: $color__accent;
+            color: $color__white;
+        }
+
+    }
+
+
+
+.page {
+	max-width: 600px;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.page__title {
+	@include font-scale(headline, 4, $caps: true);
+}
+
+
+
+
+.s-quote {
+	background: $color__black;
+	color: $color__white;
+}
+
+	.s-quote__inner {
+		@include block-element;
+		padding: gutter(6) 0;
+		@include padding__medium;
+		@include padding__small;
+
+		// &:before, 
+		// &:after {
+		// 	font-family: 'Georgia', serif;
+		// 	font-size: 60px;
+		// 	line-height: 1;
+		// 	color: $color__white;
+		// 	display: block;
+		// }
+		// &:before {
+		// 	content: '“';
+		// }
+		// &:after {
+		// 	content: '”';
+		// }
+	}
+
+	.s-quote__quote {
+		margin-top: 0;
+		@include font-scale(bodyCopy, 3);
+	}
+
+	.s-quote__attribution {
+		margin-bottom: 1.5em;
+		display: block;
+		@include font-scale(bodyCopy, 2, $caps: true);
+		&:before {
+			content: '—';
+		}
+	}
+
+.s-newsletter {
+	text-align: center;
+}
+	.s-newsletter__inner {
+		border-top: 1px solid $color__black;
+	}
+
+	.s-newsletter__title {
+		@include font-scale(bodyCopy, 3);
+	}
+
+
+#mc_embed_signup form {
+	padding: 0;
+}
+#mc_embed_signup .indicates-required {
+	margin-right: 0;
+}
+#mc_embed_signup .mc-field-group {
+	width: 100%;
+}
+
+/*------------------------------------*\
+    #PAGINATION
+\*------------------------------------*/
+.pagination,
+.pagination__numbers,
+.pagination__number,
+.pagination__item {
+    display: inline-block;
+}
+
+
+.pagination {
+    border: 1px solid $color__black;
+    border-right: 0;
+    @include font-scale(headline, 1, $caps: true);
+    color: $color__black;
+    margin: gutter(6) 0 gutter(4) 0;
+}
+
+.pagination__numbers {
+    margin: 0;
+    @extend %list-unstyled;
+}
+
+.pagination__link {
+    @include transition(background);
+    &:hover {
+        background: $color__accent--light;
+    }
+}
+
+.pagination__item {
+	padding: 1em;
+    border-right: 1px solid $color__black;
+
+    &.is-active {
+    	background: $color__accent;
+    	color: $color__white;
+    }
+}

@@ -1,0 +1,35 @@
+{% macro card(product) %}
+<article class="card">
+	<a href="{{ product.link }}">
+		{% if product.get_thumbnail %}
+		<img class="card__image" src="{{ product.get_thumbnail.src('wide_4-12') }}" />
+		{% endif %}
+
+		{% if product.child_count() %}
+		<div class="card__child-count">{{ product.child_count() }}</div>
+		{% endif %}
+
+		<h1 class="card__title">{{ product.title }}</h1>
+	</a>
+</article>
+{% endmacro %}
+
+
+{% macro header(page, options) %}
+	<h1 class="header__title">
+		{% if page.title %}
+			{{ page.title }}
+		{% elseif options.archive_title %}
+			{{ options.archive_title }}
+		{% endif %}
+	</h1>
+	<div class="header__text">
+		{% if page.content %}
+			{{ page.content }}
+		{% elseif page.description %}
+			{{ page.description }}
+		{% elseif options.archive_text %}
+			{{ options.archive_text }}
+		{% endif %}
+	</div>
+{% endmacro %}

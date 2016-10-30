@@ -1,0 +1,34 @@
+// Device sizes, used in media queries
+$device__large: 1024px;
+$device__medium: 950px;
+$device__small: 580px;
+
+
+/**
+ * Breakpoints
+ *
+*/
+
+@mixin breakpoint($size) {
+    @if $size == large-only {
+        @media (min-width: $device__large) { @content; } // 1024px
+
+    } @else if $size == medium-only {
+        @media (max-width: $device__large) and (min-width: $device__small) { @content; }
+    
+    } @else if $size == small-only {
+        @media (max-width: $device__small) { @content; }
+
+    } @else if $size == large_medium {
+        @media (min-width: $device__small) { @content; }
+
+    } @else if $size == nav-large {
+        @media (min-width: 800px) { @content; }
+    } @else if $size == nav-small {
+        @media (max-width: 799px) { @content; }
+
+    } @else if $size == medium_small {
+        @media (max-width: $device__large) { @content; }
+
+    }
+}

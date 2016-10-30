@@ -1,0 +1,78 @@
+{% extends 'base.twig' %}
+
+{% block body %}
+
+
+
+<section class="section container product">
+
+	{% if gallery_image_count == 1 %}
+
+
+		{% for image in page.get_field('gallery') %}
+		<div class="product__gallery">
+			<img class="image" src="{{ TimberImage(image).src('wide_8-12') }}" />
+		</div>
+		{% endfor %}
+
+
+	{% else %}
+
+
+	<div class="product__gallery">
+		<div id="slider" class="flexslider">
+			<ul class="slides">
+				{% for image in page.get_field('gallery') %}
+				<li>
+					<img src="{{ TimberImage(image).src('wide_8-12') }}" />
+				</li>
+				{% endfor %}
+			</ul>
+		</div>
+
+		<div id="carousel" class="flexslider">
+			<ul class="slides">
+				{% for image in page.get_field('gallery') %}
+				<li>
+					<img src="{{ TimberImage(image).src('wide_4-12') }}" />
+				</li>
+				{% endfor %}
+			</ul>
+		</div>
+	</div>
+
+
+	{% endif %}
+
+
+
+	<div class="product__content">
+		<div class="product__content-inner">
+
+			<ul class="product__categories">
+			{% for term in page.terms('categories') %}
+				<li class="product__category">
+					<a href="{{ site.url }}/category/{{ term.slug }}">
+						{{ term.name }}
+					</a>
+				</li>
+				{% if not loop.last %} | {% endif %}
+			{% endfor %}
+			</ul>
+
+			<h1 class="product__title">{{ page.title }}</h1>
+			<div class="product__text">
+				{{ page.content }}
+
+				<a class="product__button" href="{{ page.get_field('file').url }}" download="{{ page.get_field('file').filename }}">Download File</a>
+
+			</div>
+
+		</div>
+	</div>
+
+</section>
+
+{% include 's-featured-products.twig' %}
+
+{% endblock %}

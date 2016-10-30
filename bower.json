@@ -1,0 +1,27 @@
+{
+  "name": "sage",
+  "homepage": "https://roots.io/sage/",
+  "authors": [
+    "Ben Word <ben@benword.com>"
+  ],
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "normalize-css": "normalize.css#^3.0.3",
+    "picturefill": "~3.0.2",
+    "lazysizes": "^1.5.0",
+    "susy": "2.2.11",
+    "enquire": "^2.1.2",
+    "datatables": "^1.10.12",
+    "scrolltofixed": "1.0.8",
+    "flexslider": "^2.6.3"
+  },
+  "overrides": {
+    "lazysizes": {
+      "main": [
+        "lazysizes.js",
+        "plugins/unveilhooks/ls.unveilhooks.js"
+      ]
+    }
+  }
+}

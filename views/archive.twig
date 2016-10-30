@@ -1,0 +1,73 @@
+{% extends 'base.twig' %}
+
+{% block body %}
+
+<div class="container">
+
+	<div class="header">
+		{{ macros.header(page, options) }}
+	</div>
+
+	{% if categories %}
+	{% set is_cat_page = false %}
+	<nav>
+		<ul class="tax-cats">
+			{% for category in categories %}
+					{% if category.title != 'Uncategorized' %}
+					<li class="tax-cat {% if category.title == page.name %}active {% set is_cat_page = true %}{% endif %}">
+						<a  href="{{ category.link }}">{{category.title}}
+						</a>
+					</li>
+					{% endif %}
+			{% endfor %}
+			<li class="tax-cat {% if not is_cat_page %}active{% endif %}">
+				<a href="{{ function('get_post_type_archive_link', 'products') }}">All Products</a>
+			</li>
+		</ul>
+	</nav>
+	{% endif %}
+
+
+	<div class="cards section cards--border">
+		{% for product in products %}
+			{{ macros.card(product) }}
+		{% endfor %}
+	</div>
+
+{# 	<div class="posts__nav-wrapper">
+		{% if pagination.prev %}
+			<a href="{{pagination.prev.link}}" class="{{pagination.prev.link|length ? '' : 'invisible'}} posts__nav posts__nav--prev">Prev</a>
+		{% endif %}
+		{% if pagination.next %}
+		<a href="{{pagination.next.link}}" class="{{pagination.next.link|length ? '' : 'invisible'}} posts__nav posts__nav--next">Next</a>
+		{% endif %}
+	</div> #}
+
+	{% if pagination.pages %}
+	{% spaceless %}
+	<div class="pagination">
+		{% if pagination.prev %}
+			<a href="{{pagination.prev.link}}" class="pagination__prev pagination__item pagination__link {{pagination.prev.link|length ? '' : 'invisible'}}">Prev</a>
+		{% endif %}
+		<ul class="pagination__numbers">
+			{% for pg in pagination.pages %}
+				<li class="pagination__number {% if not pg.link %}is-active pagination__item{% endif %}">
+					{% if pg.link %}
+						<a href="{{ pg.link }}" class="pagination__item pagination__link">{{pg.title}}</a>
+					{% else %}
+						<span>{{pg.title}}</span>
+					{% endif %}
+				</li>
+			{% endfor %}
+		</ul>
+		{% if pagination.next %}
+			<a href="{{pagination.next.link}}" class="pagination__next pagination__item pagination__link {{pagination.next.link|length ? '' : 'invisible'}}">Next</a>
+		{% endif %}
+	</div>
+	{% endspaceless %}
+	{% endif %}
+
+</div>
+
+
+{% endblock %}
